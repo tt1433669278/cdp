@@ -1,0 +1,13 @@
+python3 starnet_preprocess.py   --config=PaddleOCR/configs/rec/rec_r34_vd_tps_bilstm_ctc.yml   --opt=bin_data=./pre_bin
+/home/infname45/paddlepaddle/STAR-Net/PaddleOCR/ppocr/utils/en_dict.txt
+paddle2onnx --model_dir ./inference/rec_starnet/ --model_filename inference.pdmodel --params_filename inference.pdiparams --save_file ./inference/det_onnx/starnet.onnx --opset_version=12 --enable_onnx_checker True --input_shape_dict="{'x':[1,3,32,100]}"
+
+ps -ef | grep paddle2onnx
+
+python3 /home/infname45/paddlepaddle/STAR-Net/PaddleOCR/tools/ais-bench_workload/tool/ais_infer/ais_infer.py --model=starnet.om --input=./pre_bin/ --output=./ais_out
+python3 /home/infname45/paddlepaddle/STAR-Net/PaddleOCR/tools/ais-bench_workload/tool/ais_infer/ais_infer.py --model=starnet.om --input=./pre_bin/ --output=./2022_10_26-23_00_00
+tools/ais-bench_workload/tool/ais_infer/ais_infer.py --model=starnet.om --input=./pre_bin/ --output=./ais_out
+
+python3 starnet_postprocess.py   --config=./configs/rec/rec_r34_vd_tps_bilstm_ctc.yml   --opt=results=ais_out/2022_10_26-23_00_00
+
+python3.7 ais_infer.py --model starnet.om --batchsize 1 --loop 10
