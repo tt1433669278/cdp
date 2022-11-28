@@ -38,8 +38,7 @@ R_o：根据与障碍物之间距离来进行惩罚或奖励
 
 假设实验环境：逃跑者与追赶者之间距离小于设定时被抓住，直至被所有追赶者捕获，任务结束。
 
-![](D:\yanfirst\study\Multi-robot\image\360截图20221124105153026.jpg)
-
+![](https://github.com/tt1433669278/cdp/blob/main/Multi-robot/image/360%E6%88%AA%E5%9B%BE20221124105153026.jpg)
 E：躲避者
 
 P：追赶者
@@ -72,8 +71,7 @@ P：追赶者
 
 方法：深度强化学习，对行为进行奖励和惩罚。
 
-![](D:\yanfirst\study\Multi-robot\image\360截图20221128194045299.jpg)
-
+![](https://github.com/tt1433669278/cdp/blob/main/Multi-robot/image/360%E6%88%AA%E5%9B%BE20221128194045299.jpg)
 
 
 ## 采用分散深度强化学习的方法的学习适应动态环境的合作追踪策略
@@ -86,9 +84,8 @@ State space : S
 Reward: R : S × A × S → R
 Transition : P :S × A → S 
 
-![](D:\yanfirst\study\Multi-robot\image\v2-4c11d459d855896ce3c52cc0718a35c4_b.png)
-
-Reward Signal ：agent目标不是当前reward最大而是累计reward最大
+![](https://github.com/tt1433669278/cdp/blob/main/Multi-robot/image/v2-4c11d459d855896ce3c52cc0718a35c4_b.png)
+Reward Signal ：agent目标不是当前reward最大而是累计reward最
 
 Value function ： 长期平均回报的好坏
 
