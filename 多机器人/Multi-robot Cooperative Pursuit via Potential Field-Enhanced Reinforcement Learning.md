@@ -84,7 +84,7 @@ State space : S
 Reward: R : S × A × S → R
 Transition : P :S × A → S 
 
-![](https://github.com/tt1433669278/cdp/blob/main/Multi-robot/image/v2-4c11d459d855896ce3c52cc0718a35c4_b.png)
+![](https://github.com/ZJUT-IoCS-MAS/cdp/blob/main/Multi-robot/image/v2-4c11d459d855896ce3c52cc0718a35c4_b.png)
 Reward Signal ：agent目标不是当前reward最大而是累计reward最
 
 Value function ： 长期平均回报的好坏
